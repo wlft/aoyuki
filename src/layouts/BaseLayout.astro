@@ -1,0 +1,29 @@
+---
+import aoyukiConfig from "../../aoyuki.config";
+import BaseHead from "../components/BaseHead.astro";
+
+interface Props {
+	title?: string;
+	cover?: string;
+	subTitle?: string;
+	lang?: string;
+  hex?: string;
+	setOGTypeArticle?: boolean;
+}
+
+let { title, cover, subTitle, lang, setOGTypeArticle, hex } = Astro.props;
+
+---
+
+<html lang={aoyukiConfig.locale}>
+  <BaseHead title={title} subTitle={subTitle} setOGTypeArticle={setOGTypeArticle ?? false} cover={cover} />
+  <body class="overflow-y-hidden">
+    <slot />
+  </body>
+</html>
+
+<style>
+  body {
+    @apply bg-[var(--background-color)];
+  }
+</style>

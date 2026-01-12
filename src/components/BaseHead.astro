@@ -1,0 +1,91 @@
+---
+import aoyukiConfig from "../../aoyuki.config";
+import GlobalStyles from "./GlobalStyles.astro";
+import ScriptSetup from "./ScriptSetup.astro";
+
+interface Props {
+	title?: string;
+	cover?: string; // TODO
+	subTitle?: string;
+	lang?: string;
+	setOGTypeArticle?: boolean;
+}
+
+let { title, cover, subTitle, lang, setOGTypeArticle } = Astro.props;
+
+let metaTitle: string;
+
+if (title) {
+	// metaTitle = `${title} // ${aoyukiConfig.title}`;
+  metaTitle = aoyukiConfig.tabTitleFormat
+    .replace("{pageTitle}", title)
+    .replace("{siteTitle}", aoyukiConfig.title)
+    .replace("{siteSubtitle}", aoyukiConfig.subTitle);
+} else {
+	// metaTitle = `${aoyukiConfig.title} // ${aoyukiConfig.subTitle}`;
+  metaTitle = aoyukiConfig.tabTitleFormatFallback
+    .replace("{siteTitle}", aoyukiConfig.title)
+    .replace("{siteSubtitle}", aoyukiConfig.subTitle);
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{metaTitle}</title>
+<meta name="title" content={metaTitle} />
+<meta name="description" content={subTitle ?? aoyukiConfig.description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={aoyukiConfig.title} />
+<meta property="og:description" content={subTitle ?? aoyukiConfig.description} />
+
+{ cover ? (<meta property="og:image" content={new URL(cover, Astro.url)} />) : null }
+
+{setOGTypeArticle ? (
+      <meta property="og:type" content="article" />
+      ) : (
+      <meta property="og:type" content="website" />
+)}
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={aoyukiConfig.title} />
+<meta property="twitter:description" content={subTitle ?? aoyukiConfig.description} />
+{ cover ? (<meta property="twitter:image" content={new URL(cover, Astro.url)} />) : null }
+
+<!-- RSS AutoDiscovery -->
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title={aoyukiConfig.title}
+  href={new URL("rss.xml", Astro.site)}
+/>
+
+<!-- SiteMap -->
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<!-- CSS -->
+<link
+  rel="stylesheet"
+  href="https://fastly.jsdelivr.net/npm/katex/dist/katex.min.css"
+/>
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+<GlobalStyles />
+<ScriptSetup />

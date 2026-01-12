@@ -1,0 +1,17 @@
+---
+import { Icon } from "astro-icon/components";
+
+export interface Props {
+  name: string;
+  custom_hex ?: string|null;
+}
+
+const { name, custom_hex } = Astro.props;
+---
+
+<div
+  class="flex flex-row items-center rounded-lg p-2 bg-[var(--primary-color-lighten)] dark:bg-[var(--card-color-lighten)]"
+  style={ custom_hex ? { backgroundColor: custom_hex+'44'} : null }
+>
+  <Icon name={name} size={22} class="text-[var(--primary-color)]" style={ custom_hex ? { color: custom_hex } : null } />
+</div>
