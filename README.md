@@ -1,3 +1,3 @@
-# aoyuki
+# Aoyuki
 
-temp - fork of yukina // fuwari 
+Aoyuki is a static blog template in Astro, forked from Fuwari and Yukina.
