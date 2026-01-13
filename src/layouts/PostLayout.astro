@@ -2,13 +2,17 @@
 import Main from "../layouts/MainLayout.astro";
 import Markdown from "../components/Markdown.astro";
 import CopyRight from "../components/misc/CopyRight.astro";
+import PostHeader from "../components/PostHeader.astro";
 
 interface Props {
   title?: string;
   subTitle?: string;
   cover?: string;
-  coverCredit?: {text: string; url?: string};
+  coverCredit?: { text: string; url?: string };
   published?: Date;
+  category?: string;
+  tags?: string[];
+  readingMetadata?: { time: number; wordCount: number };
   license?: {
     name: string;
     url?: string;
@@ -24,6 +28,9 @@ const {
   cover,
   coverCredit,
   published,
+  category,
+  tags,
+  readingMetadata,
   license,
   author,
   hex,
@@ -31,10 +38,28 @@ const {
 } = Astro.props;
 ---
 
-<Main title={title} subTitle={subTitle} cover={cover} coverCredit={coverCredit} hex={hex}>
+<Main
+  title={title}
+  subTitle={subTitle}
+  cover={cover}
+  coverCredit={coverCredit}
+  hex={hex}
+>
   <!-- <Fragment set:html={tocHTMLString} /> -->
   <div class="article-wrapper">
     <div class="article">
+      {
+        title && published && readingMetadata && (
+          <PostHeader
+            title={title}
+            published={published}
+            category={category}
+            tags={tags}
+            hex={hex}
+            readingMetadata={readingMetadata}
+          />
+        )
+      }
       <Markdown>
         <slot />
       </Markdown>

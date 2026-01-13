@@ -2,8 +2,8 @@
 title: Aoyuki Config Reference
 published: 2026-01-14
 description: This post showcases how to configure Aoyuki.
-cover: '/assets/images/banners/98431621_p0_master1200.jpg'
-coverCredit: {text: "Magic Power City - Gilsun", url: 'https://www.pixiv.net/en/artworks/98431621'}
+cover: '/assets/images/banners/97896836_p0_master1200.jpg'
+coverCredit: {text: "Silent Sea - Gilsun", url: 'https://www.pixiv.net/en/artworks/97896836'}
 tags: [Example, Reference]
 hex: '#2ca1e6'
 category: Examples
