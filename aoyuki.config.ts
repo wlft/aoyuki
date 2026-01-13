@@ -37,7 +37,7 @@ const aoyukiConfig: Configuration = {
   avatarUrl: "https://dummyimage.com/512x512/000/70b0ff&text=Aoyuki",
   socialLinks: [
     {
-      icon: "line-md:github",
+      icon: "line-md:github-twotone",
       link: "https://github.com/wlft/aoyuki",
     },
     {
@@ -45,6 +45,7 @@ const aoyukiConfig: Configuration = {
       link: "https://aoyuki.wolfite.dev",
     },
   ],
+
   maxSidebarCategoryChip: 6, // It is recommended to set it to a common multiple of 2 and 3
   maxSidebarTagChip: 12,
   maxFooterCategoryChip: 6,
@@ -72,8 +73,9 @@ const aoyukiConfig: Configuration = {
     },
   ],
 
-  slugMode: "HASH", // 'RAW' | 'HASH'
+  slugMode: "HASH", // 'RAW' = show the exact slug, i.e., /posts/my-post-name || 'HASH' = show the hash of the slug, i.e., /posts/d57d7999
 
+  // the license of your content, default CC BY-NC-SA 4.0, read more licenses on creativecommons.org
   license: {
     name: "CC BY-NC-SA 4.0",
     url: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
