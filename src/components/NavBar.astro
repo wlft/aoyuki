@@ -45,7 +45,7 @@ const navCount = aoyukiConfig.navLinks.length;
     <div class="menu">
       {
         aoyukiConfig.navLinks.map((nav) => (
-          <a href={nav.href}>
+          <a href={nav.href} target={nav.external ? "_blank" : "_self"}>
             <p>{nav.label ?? i18n(nav.nameKey)}</p>
 
             {nav.external ? (
