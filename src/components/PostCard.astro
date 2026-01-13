@@ -29,21 +29,24 @@ const { time, wordCount } = props.readingMetadata;
 const accent = props.hex ? props.hex.toLowerCase() : null;
 ---
 
-
 <div
-  class="mx-3 flex flex-col rounded-3xl bg-[var(--card-color)] lg:mx-0 lg:h-[212px]"
+  class="group relative mx-3 flex flex-col overflow-hidden rounded-3xl lg:mx-0 lg:h-[212px]"
 >
-  <a
-    href={contentUrl}
-    class="relative h-[128px] transition-all hover:brightness-75 lg:hidden"
-  >
-    {props.image ? (<img
-      class="lozad absolute left-0 top-0 h-full w-full rounded-t-3xl object-cover lg:hidden"
+  <div class="absolute inset-0 z-0 h-full w-full">
+    <img
+      class="lozad h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
       data-src={props.image ?? GetCoverURLForUnspecifiedEntry(entryID).src}
       alt="CoverPost"
-    />) : (
-      <div class="h-full w-full bg-[var(--primary-color)] rounded-t-3xl object-cover lg:hidden left-0 top-0 absolute" />
-    )}
+    />
+    <div
+      class="absolute inset-0 bg-[var(--card-color)] opacity-85 transition-opacity duration-500 group-hover:opacity-80"
+    >
+    </div>
+  </div>
+  <a
+    href={contentUrl}
+    class="relative z-10 h-[128px] transition-all hover:brightness-75 lg:hidden"
+  >
     <div class="absolute bottom-2 w-full">
       <div class="mx-2 flex flex-row justify-between">
         <div
@@ -67,18 +70,26 @@ const accent = props.hex ? props.hex.toLowerCase() : null;
       </div>
     </div>
   </a>
-  <div class="flex h-[128px] flex-row lg:h-[212px]">
+  <div class="relative z-10 flex h-[128px] flex-row lg:h-[212px]">
     <div
       class="flex w-full flex-col justify-between pb-5 pl-5 pr-6 pt-3 lg:w-[calc(var(--page-width-lg)-404px)] lg:py-7 lg:pr-0 xl:w-[calc(var(--page-width-xl)-676px)]"
     >
       <div class="flex w-full flex-row items-center">
-        <div class="mx-2 hidden h-6 w-1 translate-y-[1px] rounded-lg lg:block bg-[var(--primary-color)]" style={ accent ? { backgroundColor: accent } : null } />
-        <a href={contentUrl} class="title" style={ accent ? { color: accent } : null }>
+        <div
+          class="mx-2 hidden h-6 w-1 translate-y-[1px] rounded-lg bg-[var(--primary-color)] lg:block"
+          style={accent ? { backgroundColor: accent } : null}
+        >
+        </div>
+        <a
+          href={contentUrl}
+          class="title"
+          style={accent ? { color: accent } : null}
+        >
           <p class="truncate">{props.title}</p>
           <Icon
             name="cuida:caret-right-outline"
             class="translate-y-[0.07rem] text-[var(--primary-color--lighten)]"
-            style={ accent ? { color: accent } : null }
+            style={accent ? { color: accent } : null}
           />
         </a>
       </div>
@@ -86,7 +97,10 @@ const accent = props.hex ? props.hex.toLowerCase() : null;
         <ul class="flex flex-row space-x-4">
           <li class="data">
             <!-- <PostCardInfoIcon name="material-symbols:calendar-month-rounded" /> -->
-            <div class="mr-2 hidden h-6 w-1 translate-y-[1px] rounded-lg bg-[var(--text-color-lighten)] opacity-60 lg:block" />
+            <div
+              class="mr-2 hidden h-6 w-1 translate-y-[1px] rounded-lg bg-[var(--text-color-lighten)] opacity-60 lg:block"
+            >
+            </div>
             <span class="select-none opacity-60">
               {formatDateFull(props.published)}
             </span>
@@ -94,7 +108,10 @@ const accent = props.hex ? props.hex.toLowerCase() : null;
           {
             props.category && (
               <li class="data space-x-1.5">
-                <PostCardInfoIcon name="material-symbols:folder" custom_hex={accent} />
+                <PostCardInfoIcon
+                  name="material-symbols:folder"
+                  custom_hex={accent}
+                />
                 <a
                   class="select-none rounded-md px-1.5 py-0.5 text-[var(--text-color-lighten)] transition-all hover:bg-[var(--primary-color-lighten)] hover:text-[var(--primary-color)]"
                   href={`/categories/${IdToSlug(props.category)}`}
@@ -110,7 +127,10 @@ const accent = props.hex ? props.hex.toLowerCase() : null;
             {
               props.tags && (
                 <div class="data space-x-2">
-                  <PostCardInfoIcon name="material-symbols:bookmark-manager" custom_hex={accent} />
+                  <PostCardInfoIcon
+                    name="material-symbols:bookmark-manager"
+                    custom_hex={accent}
+                  />
                   <ul class="flex flex-row items-center space-x-1">
                     {props.tags.slice(0, 2).map((tag, index) => (
                       <li class="flex select-none flex-row items-center text-[var(--text-color-lighten)]">
@@ -150,7 +170,11 @@ const accent = props.hex ? props.hex.toLowerCase() : null;
             <Icon class="pl-1" name="cuida:clock-outline" size={24} />
             <span>
               {time}
-              {time === 1 ? i18n(I18nKeys.post_card_minute) : i18n(I18nKeys.post_card_minutes)}
+              {
+                time === 1
+                  ? i18n(I18nKeys.post_card_minute)
+                  : i18n(I18nKeys.post_card_minutes)
+              }
               {i18n(I18nKeys.post_card_read)}
             </span>
           </div>
