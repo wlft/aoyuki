@@ -70,6 +70,10 @@ const aoyukiConfig: Configuration = {
       src: "/public/assets/images/banners/137642238_p0_master1200.jpg",
       credit: { text: "Dus Sahara Concept - Gilsun", url: "https://www.pixiv.net/en/artworks/137642238" },
     },
+    {
+      src: "/public/assets/images/banners/137150734_p1_master1200.jpg",
+      credit: { text: "Moonlight Storm Concept - Gilsun", url: "https://www.pixiv.net/en/artworks/137150734" },
+    },
     // "https://s2.loli.net/2025/01/25/6bKcwHZigzlM4mJ.webp",
     // "https://s2.loli.net/2025/01/25/H9WgEK6qNTcpFiS.webp",
     // "https://s2.loli.net/2025/01/25/njNVtuUMzxs81RI.webp",

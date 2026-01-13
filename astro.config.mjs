@@ -33,6 +33,7 @@ export default defineConfig({
       updateHead: true,
       updateBodyClass: false,
       globalInstance: true,
+      animationSelector: '[class*="transition-"]',
     }),
     sitemap(),
     pagefind(),
