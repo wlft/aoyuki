@@ -9,15 +9,15 @@ import aoyukiConfig from "../../aoyuki.config";
 import { formatDate, formatDateFull } from "../utils/date";
 
 export interface Props {
-	id: string;
-	title: string;
-	published: Date;
-	category?: string;
-	tags?: string[];
-	description?: string;
-	image?: string;
-	hex?: string;
-	readingMetadata: { time: number; wordCount: number };
+  id: string;
+  title: string;
+  published: Date;
+  category?: string;
+  tags?: string[];
+  description?: string;
+  image?: string;
+  hex?: string;
+  readingMetadata: { time: number; wordCount: number };
 }
 
 const props = Astro.props;

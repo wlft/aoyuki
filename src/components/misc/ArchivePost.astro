@@ -6,42 +6,19 @@ import { formatDate } from "../../utils/date";
 import aoyukiConfig from "../../../aoyuki.config";
 
 export interface Props {
-	id: string;
-	title: string;
-	pubilished: Date;
-	show_month?: boolean;
-	tags: string[] | undefined;
+  id: string;
+  title: string;
+  pubilished: Date;
+  show_month?: boolean;
+  tags: string[] | undefined;
 }
 
 const { id, title, pubilished, show_month, tags } = Astro.props;
-const month_shorthands = [
-	I18nKeys.date_month_shorthand_january,
-	I18nKeys.date_month_shorthand_february,
-	I18nKeys.date_month_shorthand_march,
-	I18nKeys.date_month_shorthand_april,
-	I18nKeys.date_month_shorthand_may,
-	I18nKeys.date_month_shorthand_june,
-	I18nKeys.date_month_shorthand_july,
-	I18nKeys.date_month_shorthand_august,
-	I18nKeys.date_month_shorthand_september,
-	I18nKeys.date_month_shorthand_october,
-	I18nKeys.date_month_shorthand_november,
-	I18nKeys.date_month_shorthand_december,
-];
+const month_shorthands = [I18nKeys.date_month_shorthand_january, I18nKeys.date_month_shorthand_february, I18nKeys.date_month_shorthand_march, I18nKeys.date_month_shorthand_april, I18nKeys.date_month_shorthand_may, I18nKeys.date_month_shorthand_june, I18nKeys.date_month_shorthand_july, I18nKeys.date_month_shorthand_august, I18nKeys.date_month_shorthand_september, I18nKeys.date_month_shorthand_october, I18nKeys.date_month_shorthand_november, I18nKeys.date_month_shorthand_december];
 const months = [
-	I18nKeys.date_month_january,
-	I18nKeys.date_month_february,
-	I18nKeys.date_month_march,
-	I18nKeys.date_month_april,
-	I18nKeys.date_month_may,
-	I18nKeys.date_month_june,
-	I18nKeys.date_month_july,
-	I18nKeys.date_month_august,
-	I18nKeys.date_month_september,
-	I18nKeys.date_month_october,
-	I18nKeys.date_month_november,
-	I18nKeys.date_month_december,
+  I18nKeys.date_month_january, I18nKeys.date_month_february, I18nKeys.date_month_march, I18nKeys.date_month_april, I18nKeys.date_month_may, I18nKeys.date_month_june, I18nKeys.date_month_july, I18nKeys.date_month_august, I18nKeys.date_month_september, I18nKeys.date_month_october, I18nKeys.date_month_november, I18nKeys.date_month_december,
 ];
+
 ---
 
 <div class="item">

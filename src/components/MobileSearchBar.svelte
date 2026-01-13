@@ -1,88 +1,87 @@
 <script lang="ts">
-import Icon from "@iconify/svelte";
+  import { onMount } from "svelte";
+  import { OverlayScrollbars } from "overlayscrollbars";
+  import Icon from "@iconify/svelte";
 
-import { onMount } from "svelte";
-import { OverlayScrollbars } from "overlayscrollbars";
+  import I18nKeys from "../locales/keys";
+  import { i18n } from "../locales/translation";
 
-import I18nKeys from "../locales/keys";
-import { i18n } from "../locales/translation";
+  let searchKeyword = "";
+  let searchResult: any[] = [];
+  let searchBarDisplay = false;
 
-let searchKeyword = "";
-let searchResult: any[] = [];
-let searchBarDisplay = false;
+  let resultPannel: HTMLDivElement;
+  let searchBar: HTMLDivElement;
+  let searchButton: HTMLButtonElement;
 
-let resultPannel: HTMLDivElement;
-let searchBar: HTMLDivElement;
-let searchButton: HTMLButtonElement;
+  let search = (keyword: string) => {};
 
-let search = (keyword: string) => {};
+  onMount(async () => {
+    // setup overlay scrollbars
+    OverlayScrollbars(resultPannel, {
+      scrollbars: {
+        theme: "scrollbar-base scrollbar-auto py-1",
+        autoHide: "move",
+      },
+    });
 
-onMount(async () => {
-	// setup overlay scrollbars
-	OverlayScrollbars(resultPannel, {
-		scrollbars: {
-			theme: "scrollbar-base scrollbar-auto py-1",
-			autoHide: "move",
-		},
-	});
+    /**
+     * Asynchronously performs a search based on the provided keyword.
+     * If in development mode, extracts a subset of mock results for demonstration.
+     * Otherwise, fetches results from the Pagefind search engine and populates the array.
+     * Toggles the visibility and height of the results panel based on the outcome.
+     */
+    search = async (keyword: string) => {
+      let searchResultArr = [];
 
-	/**
-	 * Asynchronously performs a search based on the provided keyword.
-	 * If in development mode, extracts a subset of mock results for demonstration.
-	 * Otherwise, fetches results from the Pagefind search engine and populates the array.
-	 * Toggles the visibility and height of the results panel based on the outcome.
-	 */
-	search = async (keyword: string) => {
-		const searchResultArr = [];
+      // @ts-ignore
+      const ret = await pagefind.search(keyword);
+      for (const item of ret.results) {
+        searchResultArr.push(await item.data());
+      }
+      searchResult = searchResultArr;
 
-		// @ts-expect-error
-		const ret = await pagefind.search(keyword);
-		for (const item of ret.results) {
-			searchResultArr.push(await item.data());
-		}
-		searchResult = searchResultArr;
+      const searchResultVisable = keyword != "" && searchResult.length != 0;
 
-		const searchResultVisable = keyword !== "" && searchResult.length !== 0;
+      if (searchResultVisable) {
+        resultPannel.style.height = `${searchResultArr.length * 84 + 16}px`;
+        resultPannel.style.opacity = "100%";
+      } else {
+        resultPannel.style.height = "0px";
+        resultPannel.style.opacity = "0";
+      }
+    };
+  });
 
-		if (searchResultVisable) {
-			resultPannel.style.height = `${searchResultArr.length * 84 + 16}px`;
-			resultPannel.style.opacity = "100%";
-		} else {
-			resultPannel.style.height = "0px";
-			resultPannel.style.opacity = "0";
-		}
-	};
-});
+  // handle click outside to closed search pannel
+  document.addEventListener("click", (event) => {
+    if (
+      !resultPannel.contains(event.target as any) &&
+      !searchBar.contains(event.target as any) &&
+      !searchButton.contains(event.target as any)
+    ) {
+      searchBar.style.height = "0px";
+      searchBar.style.opacity = "0";
+      searchBarDisplay = false;
+      searchKeyword = "";
+      search("");
+    }
+  });
 
-// handle click outside to closed search pannel
-document.addEventListener("click", (event) => {
-	if (
-		!resultPannel.contains(event.target as any) &&
-		!searchBar.contains(event.target as any) &&
-		!searchButton.contains(event.target as any)
-	) {
-		searchBar.style.height = "0px";
-		searchBar.style.opacity = "0";
-		searchBarDisplay = false;
-		searchKeyword = "";
-		search("");
-	}
-});
+  const toggleSearchBar = () => {
+    searchBarDisplay = !searchBarDisplay;
+    if (searchBarDisplay) {
+      searchBar.style.height = "48px";
+      searchBar.style.opacity = "100%";
+    } else {
+      searchBar.style.height = "0px";
+      searchBar.style.opacity = "0";
+      searchKeyword = "";
+      search("");
+    }
+  };
 
-const toggleSearchBar = () => {
-	searchBarDisplay = !searchBarDisplay;
-	if (searchBarDisplay) {
-		searchBar.style.height = "48px";
-		searchBar.style.opacity = "100%";
-	} else {
-		searchBar.style.height = "0px";
-		searchBar.style.opacity = "0";
-		searchKeyword = "";
-		search("");
-	}
-};
-
-$: search(searchKeyword);
+  $: search(searchKeyword);
 </script>
 
 <div class="lg:hidden">

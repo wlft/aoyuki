@@ -8,17 +8,17 @@ import CryptoJS from "crypto-js";
  * @returns The hashed slug if the configuration mode is "HASH", otherwise the raw slug.
  */
 export function IdToSlug(slug: string): string {
-	switch (aoyukiConfig.slugMode) {
-		case "HASH": {
-			const hash = CryptoJS.SHA256(slug);
-			const hasedSlug = hash.toString(CryptoJS.enc.Hex).slice(0, 8);
-			return hasedSlug;
-		}
-		case "RAW":
-			return slug;
-		default:
-			return slug;
-	}
+  switch (aoyukiConfig.slugMode) {
+    case "HASH": {
+      const hash = CryptoJS.SHA256(slug);
+      const hasedSlug = hash.toString(CryptoJS.enc.Hex).slice(0, 8);
+      return hasedSlug;
+    }
+    case "RAW":
+      return slug;
+    default:
+      return slug;
+  }
 }
 
 /**
@@ -32,13 +32,13 @@ export function IdToSlug(slug: string): string {
  * @returns A zero-based index within the list.
  */
 export function GetIndexFromSlugID(id: string, listLength: number): number {
-	// Convert the string to a number
-	let hashValue = 0;
-	for (let i = 0; i < id.length; i++) {
-		hashValue += id.charCodeAt(i) * 31 ** (id.length - 1 - i);
-	}
+  // Convert the string to a number
+  let hashValue = 0;
+  for (let i = 0; i < id.length; i++) {
+    hashValue += id.charCodeAt(i) * 31 ** (id.length - 1 - i);
+  }
 
-	// Modulo the list length to get the index
-	const index = hashValue % listLength;
-	return index;
+  // Modulo the list length to get the index
+  const index = hashValue % listLength;
+  return index;
 }

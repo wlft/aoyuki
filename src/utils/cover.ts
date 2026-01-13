@@ -8,9 +8,7 @@ import type { Configuration } from "../types/config";
  * @param id - The unique identifier for the entry.
  * @returns The URL of the corresponding cover image.
  */
-export function GetCoverURLForUnspecifiedEntry(
-	id: string,
-): Configuration["banners"][number] {
-	const index = GetIndexFromSlugID(id, aoyukiConfig.banners.length);
-	return aoyukiConfig.banners[index];
+export function GetCoverURLForUnspecifiedEntry(id: string): Configuration['banners'][number] {
+  const index = GetIndexFromSlugID(id, aoyukiConfig.banners.length);
+  return aoyukiConfig.banners[index];
 }

@@ -4,30 +4,30 @@ import Markdown from "../components/Markdown.astro";
 import CopyRight from "../components/misc/CopyRight.astro";
 
 interface Props {
-	title?: string;
-	subTitle?: string;
-	cover?: string;
-	coverCredit?: { text: string; url?: string };
-	published?: Date;
-	license?: {
-		name: string;
-		url?: string;
-	};
-	hex?: string;
-	author?: string;
-	sourceLink?: string;
+  title?: string;
+  subTitle?: string;
+  cover?: string;
+  coverCredit?: {text: string; url?: string};
+  published?: Date;
+  license?: {
+    name: string;
+    url?: string;
+  };
+  hex?: string;
+  author?: string;
+  sourceLink?: string;
 }
 
 const {
-	title,
-	subTitle,
-	cover,
-	coverCredit,
-	published,
-	license,
-	author,
-	hex,
-	sourceLink,
+  title,
+  subTitle,
+  cover,
+  coverCredit,
+  published,
+  license,
+  author,
+  hex,
+  sourceLink,
 } = Astro.props;
 ---
 

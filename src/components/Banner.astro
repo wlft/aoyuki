@@ -1,15 +1,14 @@
 ---
-import { Icon } from "astro-icon/components";
-
 import aoyukiConfig from "../../aoyuki.config";
 import { GetCoverURLForUnspecifiedEntry } from "../utils/cover";
+import { Icon } from "astro-icon/components";
 
 export interface Props {
-	title?: string;
-	subTitle?: string;
-	cover?: string;
-	coverCredit?: { text: string; url?: string };
-	slug?: string;
+  title?: string;
+  subTitle?: string;
+  cover?: string;
+  coverCredit?: { text: string; url?: string };
+  slug?: string;
 }
 
 const { title, subTitle, cover, slug, coverCredit } = Astro.props;
@@ -17,7 +16,7 @@ const { title, subTitle, cover, slug, coverCredit } = Astro.props;
 const hasTitle = title !== undefined || subTitle !== undefined;
 const hasHeaderImg = cover !== undefined || slug !== undefined;
 
-const carouselImgsList = aoyukiConfig.banners;
+let carouselImgsList = aoyukiConfig.banners;
 const carouselImgsCount = carouselImgsList.length;
 const carouselAnimationTime = `${carouselImgsCount * 6}s`;
 

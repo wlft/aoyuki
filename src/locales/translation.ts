@@ -4,23 +4,23 @@ import { en } from "./languages/en";
 import { zh_CN } from "./languages/zh_cn";
 
 export type Translation = {
-	[K in I18nKeys]: string;
+  [K in I18nKeys]: string;
 };
 
 const map: { [key: string]: Translation } = {
-	en: en,
-	"zh-cn": zh_CN,
+  en: en,
+  "zh-cn": zh_CN,
 };
 
 export function getTranslation(lang: string): Translation {
-	return map[lang.toLowerCase()] || en;
+  return map[lang.toLowerCase()] || en;
 }
 
 export function i18n(key: I18nKeys, ...interpolations: string[]): string {
-	const lang = aoyukiConfig.locale;
-	let translation = getTranslation(lang)[key];
-	interpolations.forEach((interpolation) => {
-		translation = translation.replace("{{}}", interpolation);
-	});
-	return translation;
+  const lang = aoyukiConfig.locale;
+  let translation = getTranslation(lang)[key];
+  interpolations.forEach((interpolation) => {
+    translation = translation.replace("{{}}", interpolation);
+  });
+  return translation;
 }

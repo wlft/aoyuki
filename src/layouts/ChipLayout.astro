@@ -3,15 +3,15 @@
 import Main from "../layouts/MainLayout.astro";
 
 export interface Props {
-	chips: {
-		name: string;
-		slug?: string;
-		subChip?: string;
-	}[];
-	title?: string;
-	subTitle?: string;
-	cover?: string;
-	slug?: string;
+  chips: {
+    name: string;
+    slug?: string;
+    subChip?: string;
+  }[];
+  title?: string;
+  subTitle?: string;
+  cover?: string;
+  slug?: string;
 }
 
 const { chips, title, subTitle, cover, slug } = Astro.props;
