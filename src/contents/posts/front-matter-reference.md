@@ -46,7 +46,7 @@ licenseUrl: "https://github.com/wlft/aoyuki/blob/main/LICENSE"
 
 # Reference
 
-## Title <string\>
+## Title <string\> <required>
 
 The title is a string that represents the title of the post. It is required.
 
@@ -54,7 +54,7 @@ The title is a string that represents the title of the post. It is required.
 title: Front Matter Reference
 ```
 
-## Published <string: yyyy-mm-dd || yyyy-mm-ddThh:mm:ss.sssZ\>
+## Published <string: yyyy-mm-dd || yyyy-mm-ddThh:mm:ss.sssZ\> <required>
 
 The published date is a string that represents the date the post was published. It is required.
 
