@@ -18,14 +18,19 @@ const tagKeys = [...tags.keys()];
     <div
       class="onload-animation rounded-3xl bg-[var(--card-color)] p-3"
       style=`animation-delay: var(--onload-animation-delay);`
-    >
-      <a href="/about" class="avatar-wrapper">
-        <img
-          src={aoyukiConfig.avatarUrl}
-          alt="avatar"
-          class="avatar lozad select-none"
-        />
-      </a>
+    > 
+      <a aria-label="Go to About Page" href={'/about'}
+       class="group block relative mx-auto mt-1 lg:mx-0 lg:mt-0 mb-3
+       max-w-[12rem] lg:max-w-none overflow-hidden rounded-xl active:scale-95">
+        <div class="absolute transition pointer-events-none group-hover:bg-black/30 group-active:bg-black/50
+        w-full h-full z-50 flex items-center justify-center">
+            <Icon name="material-symbols:visibility-rounded"
+                  class="transition opacity-0 scale-90 group-hover:scale-100 group-hover:opacity-100 text-white text-5xl">
+            </Icon>
+        </div>
+        <img src={aoyukiConfig.avatarUrl || ""} alt="Profile Image of the Author" class="mx-auto lg:w-full h-full lg:mt-0 " />
+    </a>
+
       <div class="username mt-4">
         <p>{aoyukiConfig.username}</p>
       </div>
