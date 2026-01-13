@@ -39,7 +39,7 @@ const accent = props.hex ? props.hex.toLowerCase() : null;
   >
     {props.image ? (<img
       class="lozad absolute left-0 top-0 h-full w-full rounded-t-3xl object-cover lg:hidden"
-      data-src={props.image ?? GetCoverURLForUnspecifiedEntry(entryID)}
+      data-src={props.image ?? GetCoverURLForUnspecifiedEntry(entryID).src}
       alt="CoverPost"
     />) : (
       <div class="h-full w-full bg-[var(--primary-color)] rounded-t-3xl object-cover lg:hidden left-0 top-0 absolute" />

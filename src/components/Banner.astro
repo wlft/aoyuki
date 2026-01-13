@@ -95,7 +95,7 @@ const carouselAnimationCSS = `
         <div class="cover">
           <img
             class="item lozad"
-            data-src={cover ?? GetCoverURLForUnspecifiedEntry(slug ?? "")}
+            data-src={cover ?? GetCoverURLForUnspecifiedEntry(slug ?? "").src}
             alt="PostCover"
           />
         </div>
