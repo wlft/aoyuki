@@ -1,58 +1,58 @@
 import type I18nKeys from "../locales/keys";
 
 interface navLink {
-  href: string;
-  external?: boolean;
-};
+	href: string;
+	external?: boolean;
+}
 
 export interface navLinkWithKey extends navLink {
-  nameKey: I18nKeys;
-  label: never;
+	nameKey: I18nKeys;
+	label: never;
 }
 
 export interface navLinkWithLabel extends navLink {
-  label: string;
-  nameKey: never;
+	label: string;
+	nameKey: never;
 }
 
 interface Configuration {
-  title: string;
-  subTitle: string;
-  brandTitle: string;
+	title: string;
+	subTitle: string;
+	brandTitle: string;
 
-  description: string;
+	description: string;
 
-  site: string;
+	site: string;
 
-  locale: "en" | "zh-CN";
+	locale: "en" | "zh-CN";
 
-  navLinks: (navLinkWithKey|navLinkWithLabel)[];
+	navLinks: (navLinkWithKey | navLinkWithLabel)[];
 
-  username: string;
-  sign: string;
-  avatarUrl: string;
+	username: string;
+	sign: string;
+	avatarUrl: string;
 
-  socialLinks: { icon: string; link: string }[];
+	socialLinks: { icon: string; link: string }[];
 
-  maxSidebarCategoryChip: number;
-  maxSidebarTagChip: number;
-  maxFooterCategoryChip: number;
-  maxFooterTagChip: number;
+	maxSidebarCategoryChip: number;
+	maxSidebarTagChip: number;
+	maxFooterCategoryChip: number;
+	maxFooterTagChip: number;
 
-  tabTitleFormat: string;
-  tabTitleFormatFallback: string;
+	tabTitleFormat: string;
+	tabTitleFormatFallback: string;
 
-  // banners: string[];
-  banners: { src: string; credit?: { text : string, url ?: string } }[];
+	// banners: string[];
+	banners: { src: string; credit?: { text: string; url?: string } }[];
 
-  slugMode: "HASH" | "RAW";
+	slugMode: "HASH" | "RAW";
 
-  license: {
-    name: string;
-    url: string;
-  };
+	license: {
+		name: string;
+		url: string;
+	};
 
-  bannerStyle: "LOOP";
+	bannerStyle: "LOOP";
 }
 
 export type { Configuration };

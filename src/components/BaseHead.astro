@@ -11,21 +11,21 @@ interface Props {
 	setOGTypeArticle?: boolean;
 }
 
-let { title, cover, subTitle, lang, setOGTypeArticle } = Astro.props;
+const { title, cover, subTitle, lang, setOGTypeArticle } = Astro.props;
 
 let metaTitle: string;
 
 if (title) {
 	// metaTitle = `${title} // ${aoyukiConfig.title}`;
-  metaTitle = aoyukiConfig.tabTitleFormat
-    .replace("{pageTitle}", title)
-    .replace("{siteTitle}", aoyukiConfig.title)
-    .replace("{siteSubtitle}", aoyukiConfig.subTitle);
+	metaTitle = aoyukiConfig.tabTitleFormat
+		.replace("{pageTitle}", title)
+		.replace("{siteTitle}", aoyukiConfig.title)
+		.replace("{siteSubtitle}", aoyukiConfig.subTitle);
 } else {
 	// metaTitle = `${aoyukiConfig.title} // ${aoyukiConfig.subTitle}`;
-  metaTitle = aoyukiConfig.tabTitleFormatFallback
-    .replace("{siteTitle}", aoyukiConfig.title)
-    .replace("{siteSubtitle}", aoyukiConfig.subTitle);
+	metaTitle = aoyukiConfig.tabTitleFormatFallback
+		.replace("{siteTitle}", aoyukiConfig.title)
+		.replace("{siteSubtitle}", aoyukiConfig.subTitle);
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);

@@ -7,12 +7,11 @@ interface Props {
 	cover?: string;
 	subTitle?: string;
 	lang?: string;
-  hex?: string;
+	hex?: string;
 	setOGTypeArticle?: boolean;
 }
 
-let { title, cover, subTitle, lang, setOGTypeArticle, hex } = Astro.props;
-
+const { title, cover, subTitle, lang, setOGTypeArticle, hex } = Astro.props;
 ---
 
 <html lang={aoyukiConfig.locale}>

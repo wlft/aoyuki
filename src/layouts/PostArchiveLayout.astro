@@ -4,14 +4,14 @@ import Main from "../layouts/MainLayout.astro";
 import ArchiveYearTitle from "../components/misc/ArchiveYearTitle.astro";
 import ArchivePost from "../components/misc/ArchivePost.astro";
 
-import { type Archive } from "../utils/content";
+import type { Archive } from "../utils/content";
 
 export interface Props {
-  archiveMap: Map<number, Array<Archive>>;
-  title?: string;
-  subTitle?: string;
-  cover?: string;
-  slug?: string;
+	archiveMap: Map<number, Array<Archive>>;
+	title?: string;
+	subTitle?: string;
+	cover?: string;
+	slug?: string;
 }
 
 const { archiveMap, title, subTitle, cover, slug } = Astro.props;

@@ -1,87 +1,88 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import { OverlayScrollbars } from "overlayscrollbars";
-  import Icon from "@iconify/svelte";
+import Icon from "@iconify/svelte";
 
-  import I18nKeys from "../locales/keys";
-  import { i18n } from "../locales/translation";
+import { onMount } from "svelte";
+import { OverlayScrollbars } from "overlayscrollbars";
 
-  let searchKeyword = "";
-  let searchResult: any[] = [];
-  let searchBarDisplay = false;
+import I18nKeys from "../locales/keys";
+import { i18n } from "../locales/translation";
 
-  let resultPannel: HTMLDivElement;
-  let searchBar: HTMLDivElement;
-  let searchButton: HTMLButtonElement;
+let searchKeyword = "";
+let searchResult: any[] = [];
+let searchBarDisplay = false;
 
-  let search = (keyword: string) => {};
+let resultPannel: HTMLDivElement;
+let searchBar: HTMLDivElement;
+let searchButton: HTMLButtonElement;
 
-  onMount(async () => {
-    // setup overlay scrollbars
-    OverlayScrollbars(resultPannel, {
-      scrollbars: {
-        theme: "scrollbar-base scrollbar-auto py-1",
-        autoHide: "move",
-      },
-    });
+let search = (keyword: string) => {};
 
-    /**
-     * Asynchronously performs a search based on the provided keyword.
-     * If in development mode, extracts a subset of mock results for demonstration.
-     * Otherwise, fetches results from the Pagefind search engine and populates the array.
-     * Toggles the visibility and height of the results panel based on the outcome.
-     */
-    search = async (keyword: string) => {
-      let searchResultArr = [];
+onMount(async () => {
+	// setup overlay scrollbars
+	OverlayScrollbars(resultPannel, {
+		scrollbars: {
+			theme: "scrollbar-base scrollbar-auto py-1",
+			autoHide: "move",
+		},
+	});
 
-      // @ts-ignore
-      const ret = await pagefind.search(keyword);
-      for (const item of ret.results) {
-        searchResultArr.push(await item.data());
-      }
-      searchResult = searchResultArr;
+	/**
+	 * Asynchronously performs a search based on the provided keyword.
+	 * If in development mode, extracts a subset of mock results for demonstration.
+	 * Otherwise, fetches results from the Pagefind search engine and populates the array.
+	 * Toggles the visibility and height of the results panel based on the outcome.
+	 */
+	search = async (keyword: string) => {
+		const searchResultArr = [];
 
-      const searchResultVisable = keyword != "" && searchResult.length != 0;
+		// @ts-expect-error
+		const ret = await pagefind.search(keyword);
+		for (const item of ret.results) {
+			searchResultArr.push(await item.data());
+		}
+		searchResult = searchResultArr;
 
-      if (searchResultVisable) {
-        resultPannel.style.height = `${searchResultArr.length * 84 + 16}px`;
-        resultPannel.style.opacity = "100%";
-      } else {
-        resultPannel.style.height = "0px";
-        resultPannel.style.opacity = "0";
-      }
-    };
-  });
+		const searchResultVisable = keyword !== "" && searchResult.length !== 0;
 
-  // handle click outside to closed search pannel
-  document.addEventListener("click", (event) => {
-    if (
-      !resultPannel.contains(event.target as any) &&
-      !searchBar.contains(event.target as any) &&
-      !searchButton.contains(event.target as any)
-    ) {
-      searchBar.style.height = "0px";
-      searchBar.style.opacity = "0";
-      searchBarDisplay = false;
-      searchKeyword = "";
-      search("");
-    }
-  });
+		if (searchResultVisable) {
+			resultPannel.style.height = `${searchResultArr.length * 84 + 16}px`;
+			resultPannel.style.opacity = "100%";
+		} else {
+			resultPannel.style.height = "0px";
+			resultPannel.style.opacity = "0";
+		}
+	};
+});
 
-  const toggleSearchBar = () => {
-    searchBarDisplay = !searchBarDisplay;
-    if (searchBarDisplay) {
-      searchBar.style.height = "48px";
-      searchBar.style.opacity = "100%";
-    } else {
-      searchBar.style.height = "0px";
-      searchBar.style.opacity = "0";
-      searchKeyword = "";
-      search("");
-    }
-  };
+// handle click outside to closed search pannel
+document.addEventListener("click", (event) => {
+	if (
+		!resultPannel.contains(event.target as any) &&
+		!searchBar.contains(event.target as any) &&
+		!searchButton.contains(event.target as any)
+	) {
+		searchBar.style.height = "0px";
+		searchBar.style.opacity = "0";
+		searchBarDisplay = false;
+		searchKeyword = "";
+		search("");
+	}
+});
 
-  $: search(searchKeyword);
+const toggleSearchBar = () => {
+	searchBarDisplay = !searchBarDisplay;
+	if (searchBarDisplay) {
+		searchBar.style.height = "48px";
+		searchBar.style.opacity = "100%";
+	} else {
+		searchBar.style.height = "0px";
+		searchBar.style.opacity = "0";
+		searchKeyword = "";
+		search("");
+	}
+};
+
+$: search(searchKeyword);
 </script>
 
 <div class="lg:hidden">

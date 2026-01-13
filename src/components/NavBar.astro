@@ -1,11 +1,12 @@
 ---
+import "astro-pagefind";
+
 import aoyukiConfig from "../../aoyuki.config";
 import { i18n } from "../locales/translation";
 
 import { Icon } from "astro-icon/components";
 import SearchBar from "./SearchBar.svelte";
 import MobileSearchBar from "./MobileSearchBar.svelte";
-import "astro-pagefind";
 
 const navCount = aoyukiConfig.navLinks.length;
 ---

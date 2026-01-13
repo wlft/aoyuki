@@ -1,11 +1,11 @@
 ---
 export interface Props {
-  lastPage: number;
-  current: number;
-  prevURL?: string;
-  nextURL?: string;
-  style?: string;
-  class?: string;
+	lastPage: number;
+	current: number;
+	prevURL?: string;
+	nextURL?: string;
+	style?: string;
+	class?: string;
 }
 
 const props = Astro.props;
@@ -14,23 +14,23 @@ const maxVisiblePages = 4;
 let pages: (string | number)[] = [];
 
 if (props.lastPage <= maxVisiblePages) {
-  pages = Array.from({ length: props.lastPage }, (_, i) => i + 1);
+	pages = Array.from({ length: props.lastPage }, (_, i) => i + 1);
 } else {
-  const startPage = Math.max(
-    1,
-    props.current - Math.floor(maxVisiblePages / 2),
-  );
-  const endPage = Math.min(props.lastPage, startPage + maxVisiblePages - 1);
+	const startPage = Math.max(
+		1,
+		props.current - Math.floor(maxVisiblePages / 2),
+	);
+	const endPage = Math.min(props.lastPage, startPage + maxVisiblePages - 1);
 
-  if (startPage > 1) pages.push(1);
-  if (startPage > 2) pages.push("...");
+	if (startPage > 1) pages.push(1);
+	if (startPage > 2) pages.push("...");
 
-  pages.push(
-    ...Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i),
-  );
+	pages.push(
+		...Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i),
+	);
 
-  if (endPage < props.lastPage - 1) pages.push("...");
-  if (endPage < props.lastPage) pages.push(props.lastPage);
+	if (endPage < props.lastPage - 1) pages.push("...");
+	if (endPage < props.lastPage) pages.push(props.lastPage);
 }
 ---
 

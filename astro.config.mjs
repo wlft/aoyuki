@@ -24,53 +24,60 @@ import pagefind from "astro-pagefind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: aoyukiConfig.site,
-  integrations: [
-    tailwind(),
-    svelte(),
-    icon(),
-    swup({
-      theme: false,
-      containers: ["main", "footer", ".banner-inner"],
-      smoothScrolling: true,
-      progress: true,
-      cache: true,
-      preload: true,
-      updateHead: true,
-      updateBodyClass: false,
-      globalInstance: true,
-      animationSelector: '[class*="transition-"]',
-    }),
-    sitemap(),
-    pagefind(),
-  ],
-  markdown: {
-    shikiConfig: {
-      theme: "github-dark-default",
-    },
-    remarkPlugins: [remarkReadingTime, remarkMath, remarkExcerpt, remarkSectionize, remarkDirective, parseDirectiveNode],
-    rehypePlugins: [
-      rehypeKatex,
-      rehypeSlug,
-      [
-        rehypeAutolinkHeadings,
-        {
-          behavior: "prepend",
-        },
-      ],
-      [
-        rehypeComponents,
-        {
-          components: {
-            github: GithubCardComponent,
-            note: (x, y) => AdmonitionComponent(x, y, "note"),
-            tip: (x, y) => AdmonitionComponent(x, y, "tip"),
-            important: (x, y) => AdmonitionComponent(x, y, "important"),
-            caution: (x, y) => AdmonitionComponent(x, y, "caution"),
-            warning: (x, y) => AdmonitionComponent(x, y, "warning"),
-          },
-        },
-      ],
-    ],
-  },
+	site: aoyukiConfig.site,
+	integrations: [
+		tailwind(),
+		svelte(),
+		icon(),
+		swup({
+			theme: false,
+			containers: ["main", "footer", ".banner-inner"],
+			smoothScrolling: true,
+			progress: true,
+			cache: true,
+			preload: true,
+			updateHead: true,
+			updateBodyClass: false,
+			globalInstance: true,
+			animationSelector: '[class*="transition-"]',
+		}),
+		sitemap(),
+		pagefind(),
+	],
+	markdown: {
+		shikiConfig: {
+			theme: "github-dark-default",
+		},
+		remarkPlugins: [
+			remarkReadingTime,
+			remarkMath,
+			remarkExcerpt,
+			remarkSectionize,
+			remarkDirective,
+			parseDirectiveNode,
+		],
+		rehypePlugins: [
+			rehypeKatex,
+			rehypeSlug,
+			[
+				rehypeAutolinkHeadings,
+				{
+					behavior: "prepend",
+				},
+			],
+			[
+				rehypeComponents,
+				{
+					components: {
+						github: GithubCardComponent,
+						note: (x, y) => AdmonitionComponent(x, y, "note"),
+						tip: (x, y) => AdmonitionComponent(x, y, "tip"),
+						important: (x, y) => AdmonitionComponent(x, y, "important"),
+						caution: (x, y) => AdmonitionComponent(x, y, "caution"),
+						warning: (x, y) => AdmonitionComponent(x, y, "warning"),
+					},
+				},
+			],
+		],
+	},
 });

@@ -6,11 +6,11 @@ import { GetCategories } from "../../utils/content";
 
 const categories = [...(await GetCategories()).values()].sort();
 const chips = categories.map((category) => {
-  return {
-    name: category.name,
-    slug: category.slug,
-    subChip: category.posts.length.toString(),
-  };
+	return {
+		name: category.name,
+		slug: category.slug,
+		subChip: category.posts.length.toString(),
+	};
 });
 ---
 

@@ -6,14 +6,14 @@ import { i18n } from "../../locales/translation";
 import { formatDate, formatDateFull } from "../../utils/date";
 
 export interface Props {
-  title: string;
-  published: Date;
-  license?: {
-    name: string;
-    url?: string;
-  };
-  sourceLink?: string;
-  author?: string;
+	title: string;
+	published: Date;
+	license?: {
+		name: string;
+		url?: string;
+	};
+	sourceLink?: string;
+	author?: string;
 }
 
 const { title, published, license, author, sourceLink } = Astro.props;
