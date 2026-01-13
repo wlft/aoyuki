@@ -17,7 +17,6 @@ export interface Props {
 }
 
 const props = Astro.props;
-console.log(props);
 ---
 
 <Base title={props.title} setOGTypeArticle={true} cover={props.cover} subTitle={props.subTitle} hex={props.hex}>

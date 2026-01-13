@@ -8,6 +8,7 @@ tags: [Example, Reference, Front Matter]
 hex: '#32a852'
 category: Examples
 draft: false
+
 licenseName: "MIT License"
 author: "wlft"
 sourceLink: "https://github.com/wlft/aoyuki"
@@ -17,6 +18,29 @@ licenseUrl: "https://github.com/wlft/aoyuki/blob/main/LICENSE"
 The front matter is a YAML block at the beginning of a blog post's markdown file. It contains metadata about the post, such as the title, description, cover image, tags, category, etc.
 
 This post showcases the basic reference of how to use the front matter correctly and what values are expected and possible. The full front matter config can be found at `src/content.config.ts`.
+
+<br />
+
+# Example Front Matter
+
+```yaml
+---
+title: Front Matter Reference
+published: 2026-01-13
+description: This post showcases how to use front matter in a blog post.
+cover: '/assets/images/banners/98431621_p0_master1200.jpg'
+coverCredit: {text: "Magic Power City - Gilsun", url: 'https://www.pixiv.net/en/artworks/98431621'}
+tags: [Example, Reference, Front Matter]
+hex: '#32a852'
+category: Examples
+draft: false
+
+licenseName: "MIT License"
+author: "wlft"
+sourceLink: "https://github.com/wlft/aoyuki"
+licenseUrl: "https://github.com/wlft/aoyuki/blob/main/LICENSE"
+---
+```
 
 <br />
 
