@@ -55,19 +55,19 @@ const aoyukiConfig: Configuration = {
 
   banners: [
     {
-      src: "/public/assets/images/banners/137858962_p0_master1200.jpg",
+      src: "/assets/images/banners/137858962_p0_master1200.jpg",
       credit: { text: "「忘れて。」 - ばなこ武丸", url: "https://www.pixiv.net/en/artworks/137858962" },
     },
     {
-      src: "/public/assets/images/banners/137642238_p0_master1200.jpg",
+      src: "/assets/images/banners/137642238_p0_master1200.jpg",
       credit: { text: "Dus Sahara Concept - Gilsun", url: "https://www.pixiv.net/en/artworks/137642238" },
     },
     {
-      src: "/public/assets/images/banners/138283711_p0_master1200.jpg",
+      src: "/assets/images/banners/138283711_p0_master1200.jpg",
       credit: { text: "So far from me now - TheProtagonists", url: "https://www.pixiv.net/en/artworks/138283711" },
     },
     {
-      src: "/public/assets/images/banners/137150734_p1_master1200.jpg",
+      src: "/assets/images/banners/137150734_p1_master1200.jpg",
       credit: { text: "Moonlight Storm Concept - Gilsun", url: "https://www.pixiv.net/en/artworks/137150734" },
     },
   ],
