@@ -37,16 +37,12 @@ const aoyukiConfig: Configuration = {
   avatarUrl: "https://dummyimage.com/512x512/000/70b0ff&text=Aoyuki",
   socialLinks: [
     {
-      icon: "line-md:github-loop",
-      link: "https://github.com/WhitePaper233",
+      icon: "line-md:github",
+      link: "https://github.com/wlft/aoyuki",
     },
     {
-      icon: "mingcute:bilibili-line",
-      link: "https://space.bilibili.com/22433608",
-    },
-    {
-      icon: "mingcute:netease-music-line",
-      link: "https://music.163.com/#/user/home?id=125291648",
+      icon: "material-symbols:globe",
+      link: "https://aoyuki.wolfite.dev",
     },
   ],
   maxSidebarCategoryChip: 6, // It is recommended to set it to a common multiple of 2 and 3
