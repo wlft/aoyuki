@@ -73,4 +73,7 @@ export default defineConfig({
       ],
     ],
   },
+  redirects: {
+    '/archive': '/timeline',
+  }
 });
