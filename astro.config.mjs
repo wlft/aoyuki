@@ -13,10 +13,12 @@ import remarkMath from "remark-math";
 import remarkSectionize from "remark-sectionize";
 import rehypeComponents from "rehype-components";
 import remarkDirective from "remark-directive";
+import remarkGithubAdmonitionsToDirectives from "remark-github-admonitions-to-directives";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 import { GithubCardComponent } from "./src/plugins/rehype-component-gtihub-card.mjs";
+import { AdmonitionComponent } from "./src/plugins/rehype-component-admonition.mjs";
 
 import aoyukiConfig from "./aoyuki.config";
 
@@ -48,7 +50,7 @@ export default defineConfig({
     shikiConfig: {
       theme: "github-dark-default",
     },
-    remarkPlugins: [remarkReadingTime, remarkMath, remarkExcerpt, remarkSectionize, remarkDirective, parseDirectiveNode],
+    remarkPlugins: [remarkReadingTime, remarkMath, remarkExcerpt, remarkSectionize, remarkDirective, parseDirectiveNode, remarkGithubAdmonitionsToDirectives],
     rehypePlugins: [
       rehypeKatex,
       rehypeSlug,
