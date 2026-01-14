@@ -2,7 +2,7 @@
 title: Front Matter Reference
 published: 2026-01-13
 description: This post showcases how to use front matter in a blog post.
-cover: '/assets/images/banners/98431621_p0_master1200.jpg'
+cover: '/assets/images/covers/98431621_p0_master1200.jpg'
 coverCredit: {text: "Magic Power City - Gilsun", url: 'https://www.pixiv.net/en/artworks/98431621'}
 tags: [Example, Reference, Front Matter]
 hex: '#32a852'

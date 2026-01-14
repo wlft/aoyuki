@@ -2,7 +2,7 @@
 title: Aoyuki Config Reference
 published: 2026-01-14
 description: This post showcases how to configure Aoyuki.
-cover: '/assets/images/banners/97896836_p0_master1200.jpg'
+cover: '/assets/images/covers/97896836_p0_master1200.jpg'
 coverCredit: {text: "Silent Sea - Gilsun", url: 'https://www.pixiv.net/en/artworks/97896836'}
 tags: [Example, Reference]
 hex: '#2ca1e6'

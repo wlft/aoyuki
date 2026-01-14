@@ -2,7 +2,7 @@
 title: Include Videos in Posts
 published: 2025-12-11
 description: This post demonstrates how to include embedded videos in a blog post.
-cover: '/assets/images/banners/103833834_p0_master1200.jpg'
+cover: '/assets/images/covers/103833834_p0_master1200.jpg'
 coverCredit: {text: "The Corridor of Mr.Sig's Mansion - Gilsun", url: 'https://www.pixiv.net/en/artworks/103833834'}
 tags: [Example, Video]
 hex: '#f54242'
