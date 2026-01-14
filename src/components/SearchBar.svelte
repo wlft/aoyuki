@@ -71,7 +71,7 @@
       for="search-bar-input"
       class="w-10 h-10 flex flex-row justify-center items-center pl-2 pr-1 hover:cursor-text text-gray-400"
     >
-      <Icon icon="mingcute:search-line" width={24} height={24} />
+      <Icon icon="line-md:search" width={24} height={24} />
     </label>
     <input
       id="search-bar-input"
