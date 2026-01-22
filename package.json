@@ -25,7 +25,7 @@
     "rehype-components": "^0.3.0",
     "remark-github-admonitions-to-directives": "^2.1.0",
     "remark-sectionize": "^2.1.0",
-    "svelte": "^5.47.1",
+    "svelte": "^5.48.0",
     "tailwindcss": "^3.4.19",
     "typescript": "^5.9.3"
   },
