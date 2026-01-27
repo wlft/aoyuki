@@ -16,7 +16,7 @@
     "@astrojs/tailwind": "^5.1.5",
     "@swup/astro": "^1.7.0",
     "@types/mdast": "^4.0.0",
-    "astro": "^5.16.14",
+    "astro": "^5.16.15",
     "astro-icon": "^1.1.5",
     "astro-pagefind": "^1.8.5",
     "hastscript": "^9.0.1",
@@ -25,7 +25,7 @@
     "rehype-components": "^0.3.0",
     "remark-github-admonitions-to-directives": "^2.1.0",
     "remark-sectionize": "^2.1.0",
-    "svelte": "^5.48.0",
+    "svelte": "^5.48.2",
     "tailwindcss": "^3.4.19",
     "typescript": "^5.9.3"
   },
