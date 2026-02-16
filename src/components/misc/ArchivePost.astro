@@ -28,7 +28,7 @@ const months = [
   >
     <div class="flex w-[15%] flex-row justify-end md:w-[12%] md:-mr-[2%]">
       <p class="date text-sm text-[var(--text-color-lighten)]">
-        {show_month ? <b>{i18n(months[pubilished.getMonth()])}&nbsp;</b> : <>|</>} {pubilished.getDate()}
+        {show_month ? <b>{i18n(months[pubilished.getMonth()])}&nbsp;</b> : <></>} {show_month ? pubilished.getDate() : <b>{pubilished.getDate()}</b>}
       </p>
     </div>
     <div class="dash-line relative flex h-full w-[15%] items-center md:w-[10%]">
