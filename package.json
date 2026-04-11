@@ -46,7 +46,7 @@
     "@types/lozad": "^1.16.4",
     "crypto-js": "^4.2.0",
     "mdast-util-to-string": "^4.0.0",
-    "pagefind": "^1.4.0",
+    "pagefind": "^1.5.0",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
