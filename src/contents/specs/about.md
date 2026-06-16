@@ -1,7 +1,8 @@
+Aoyuki is a simple static blog site generator. Unlike its predecessors, Aoyuki is focused on an easy deploy process via GitHub Pages.
+
 Aoyuki is a fork from [Yukina](https://github.com/WhitePaper233/yukina) and by extension [Fuwari](https://github.com/saicaca/fuwari), and would not exist without them.
 
-::github{repo="wlft/me"}
-<!-- change to wlft/aoyuki when repo is public -->
+::github{repo="wlft/aoyuki"}
 
 <br />
 
