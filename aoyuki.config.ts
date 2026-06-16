@@ -8,7 +8,7 @@ const aoyukiConfig: Configuration = {
 
   description: "Demo Site",
 
-  site: "https://localhost:4321",
+  site: "https://aoyuki.wolfite.dev", // no trailing /
 
   locale: "en", // set for website language and date format
 
