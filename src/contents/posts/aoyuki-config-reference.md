@@ -15,7 +15,7 @@ sourceLink: "https://github.com/wlft/aoyuki"
 licenseUrl: "https://github.com/wlft/aoyuki/blob/main/LICENSE"
 ---
 
-The config is a YAML file located at `./aoyuki.config.ts` and is used to configure the behaviour of Aoyuki. See the [Front Matter Reference](./1fe28798) for how to configure a blog post.
+The config is a YAML file located at `./aoyuki.config.ts` and is used to configure the behaviour of Aoyuki. See the [Front Matter Reference](https://aoyuki.wolfite.dev/posts/1fe28798/) for how to configure a blog post.
 
 <br />
 
