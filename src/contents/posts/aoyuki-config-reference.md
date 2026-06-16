@@ -95,7 +95,7 @@ The banners are an array of objects that represents the banners of the site. It 
 
 ## Slug Mode <string: 'RAW' | 'HASH'\> <required>
 
-The slug mode is a string that represents the slug mode of the site. It is required.
+The slug mode is a string that represents the slug mode of the site. It is required. For SEO and other optimizations, `RAW` is the most recommended.
 
 ## License <object\> <required>
 
