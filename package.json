@@ -11,7 +11,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.10",
     "@astrojs/rss": "^4.0.19",
-    "@astrojs/sitemap": "^3.7.3",
+    "@astrojs/sitemap": "^3.7.4",
     "@astrojs/svelte": "^7.2.5",
     "@astrojs/tailwind": "^5.1.5",
     "@swup/astro": "^1.8.0",
@@ -39,7 +39,7 @@
     "@iconify-json/material-symbols": "^1.2.90",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/mingcute": "^1.2.8",
-    "@iconify-json/ooui": "^1.2.22",
+    "@iconify-json/ooui": "^1.2.23",
     "@iconify/svelte": "^4.2.0",
     "@tailwindcss/typography": "^0.5.20",
     "@types/crypto-js": "^4.2.2",
