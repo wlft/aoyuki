@@ -82,8 +82,8 @@ importers:
         specifier: ^1.2.16
         version: 1.2.16
       '@iconify-json/material-symbols':
-        specifier: ^1.2.90
-        version: 1.2.90
+        specifier: ^1.2.92
+        version: 1.2.92
       '@iconify-json/mdi':
         specifier: ^1.2.3
         version: 1.2.3
@@ -91,8 +91,8 @@ importers:
         specifier: ^1.2.8
         version: 1.2.8
       '@iconify-json/ooui':
-        specifier: ^1.2.23
-        version: 1.2.23
+        specifier: ^1.2.24
+        version: 1.2.24
       '@iconify/svelte':
         specifier: ^4.2.0
         version: 4.2.0(svelte@5.57.0(@typescript-eslint/types@8.58.0))
@@ -1139,8 +1139,8 @@ packages:
   '@iconify-json/line-md@1.2.16':
     resolution: {integrity: sha512-esHPUQUp30NyqJWa7MNu6ExdG8z/aEFC5r56rVyRGhtJ7acOme6YtYPnDOgVu6p+kk24rM8602xkFuBC6g6x+w==}
 
-  '@iconify-json/material-symbols@1.2.90':
-    resolution: {integrity: sha512-gCOGFOIhK4QFsmUBsxtp6q7EPghSP11txPFfvb5Dj4nDYZ9qO88xpTQGtIzEQJ4mTPdXfzE9OWR2G4KUif4nXg==}
+  '@iconify-json/material-symbols@1.2.92':
+    resolution: {integrity: sha512-8DQClJc/77mpdlpNiWyjGXpx81YZuoNklrWNe/6K2rJtLTPU/7kRA7F/F8l5Q0a5yFvNlWuMReGB0m4CQ8cepA==}
 
   '@iconify-json/mdi@1.2.3':
     resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
@@ -1148,8 +1148,8 @@ packages:
   '@iconify-json/mingcute@1.2.8':
     resolution: {integrity: sha512-J8VXpRwTpx5yzOzyhx3T4IXnfXIKTWFl3rZ9okcW4c+NMMuwkLvdmM4rkjB83tnYIhg5+kkeMpmw8tvSnxd4rQ==}
 
-  '@iconify-json/ooui@1.2.23':
-    resolution: {integrity: sha512-fydvBuq9Kg+Bw0ZhHIuQz0KMMlCp6ijRQoJxYJeqhnjgWnO0qr/s59Uzyw2P2YpA07PoZV5hbS6/kCuk9pEO+A==}
+  '@iconify-json/ooui@1.2.24':
+    resolution: {integrity: sha512-5kKlrBxrPwKH4FRCoFFQ91xiS5Pp6OMxJ541Jv3qzEYK7DdQI7ARZAeQXC2NpR1lXib0Sxry71yZhmWI8+dxVQ==}
 
   '@iconify/svelte@4.2.0':
     resolution: {integrity: sha512-fEl0T7SAPonK7xk6xUlRPDmFDZVDe2Z7ZstlqeDS/sS8ve2uyU+Qa8rTWbIqzZJlRvONkK5kVXiUf9nIc+6OOQ==}
@@ -6253,7 +6253,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/material-symbols@1.2.90':
+  '@iconify-json/material-symbols@1.2.92':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -6265,7 +6265,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/ooui@1.2.23':
+  '@iconify-json/ooui@1.2.24':
     dependencies:
       '@iconify/types': 2.0.0
 
