@@ -9,7 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.10",
+    "@astrojs/check": "^0.9.12",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
     "@astrojs/svelte": "^7.2.5",
@@ -36,7 +36,7 @@
     "@iconify-json/fa6-solid": "^1.2.4",
     "@iconify-json/heroicons": "^1.2.3",
     "@iconify-json/line-md": "^1.2.16",
-    "@iconify-json/material-symbols": "^1.2.95",
+    "@iconify-json/material-symbols": "^1.2.96",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/mingcute": "^1.2.8",
     "@iconify-json/ooui": "^1.2.24",
