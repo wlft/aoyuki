@@ -21,7 +21,7 @@
     "astro-pagefind": "^1.8.6",
     "hastscript": "^9.0.1",
     "lozad": "^1.16.0",
-    "overlayscrollbars": "^2.16.0",
+    "overlayscrollbars": "^2.17.0",
     "rehype-components": "^0.3.0",
     "remark-github-admonitions-to-directives": "^2.1.0",
     "remark-sectionize": "^2.1.0",
@@ -57,6 +57,6 @@
     "remark-directive": "^4.0.0",
     "remark-math": "^6.0.0",
     "stylus": "^0.64.0",
-    "unist-util-visit": "^5.1.0"
+    "unist-util-visit": "^5.2.0"
   }
 }
