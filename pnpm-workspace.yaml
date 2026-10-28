@@ -2,9 +2,11 @@ packages:
   - '.'
 
 allowBuilds:
-  - astro
-  - svelte
-  - typescript
+  astro: true
+  svelte: true
+  typescript: true
+  sharp: true
+  swup: true
 
 minimumReleaseAge: 1440
 blockExoticSubdeps: true
