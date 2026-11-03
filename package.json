@@ -9,7 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.10",
+    "@astrojs/check": "^0.9.12",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
     "@astrojs/svelte": "^7.2.5",
@@ -19,13 +19,13 @@
     "astro": "^5.18.2",
     "astro-icon": "^1.2.0",
     "astro-pagefind": "^1.8.6",
-    "hastscript": "^9.0.1",
+    "hastscript": "^9.0.3",
     "lozad": "^1.16.0",
     "overlayscrollbars": "^2.17.0",
     "rehype-components": "^0.3.0",
     "remark-github-admonitions-to-directives": "^2.1.0",
     "remark-sectionize": "^2.1.0",
-    "svelte": "^5.57.2",
+    "svelte": "^5.57.3",
     "tailwindcss": "^3.4.19",
     "typescript": "^5.9.3"
   },
@@ -36,7 +36,7 @@
     "@iconify-json/fa6-solid": "^1.2.4",
     "@iconify-json/heroicons": "^1.2.3",
     "@iconify-json/line-md": "^1.2.16",
-    "@iconify-json/material-symbols": "^1.2.95",
+    "@iconify-json/material-symbols": "^1.2.97",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/mingcute": "^1.2.8",
     "@iconify-json/ooui": "^1.2.24",
